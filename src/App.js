@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Meals from './components/Meals/Meals';
+import MealDetails from './components/MealDetails/MealDetails'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/meals">
             <Meals></Meals>
+          </Route>
+          <Route path="/meal/:mealId">
+            <MealDetails></MealDetails>
           </Route>
           <Route path="/about">
 

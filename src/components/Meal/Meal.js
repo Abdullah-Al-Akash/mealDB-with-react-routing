@@ -1,8 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import './Meal.css';
 
 const Meal = (props) => {
-        const { strMeal, strInstructions, strMealThumb } = props.meal;
+        const { idMeal, strMeal, strInstructions, strMealThumb } = props.meal;
+        const history = useHistory();
+        // See Ingredients:
+        const mealDetails = () => {
+                history.push(`/meal/${idMeal}`)
+        }
+
         return (
                 <div className="col">
                         <div className="card h-100">
@@ -15,7 +22,7 @@ const Meal = (props) => {
                                 </div>
                                 <div className="card-footer">
                                         <div className="d-grid gap-2">
-                                                <button className="btn btn-success fw-bold">See Ingredients</button>
+                                                <button onClick={mealDetails} className="btn btn-success fw-bold">See Ingredients</button>
                                         </div>
                                 </div>
                         </div>
